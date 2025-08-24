@@ -1,0 +1,49 @@
+show databases;
+
+create database instamart;
+
+use instamart;
+
+create table category(
+
+cid int  primary key,
+
+cname varchar(30) not null
+
+);
+
+
+insert into category values(100,'Electronics');
+
+insert into category values(101,'Cosmetics');
+
+insert into category values(103,'Vegetables');
+
+select * from category;
+
+
+desc instamart;
+
+
+
+create table products(
+
+pid int primary key,
+
+pname varchar(30) not null,
+
+cid int,
+
+Foreign key(cid) references category(cid)
+);
+
+
+insert into products values(1,'Washing machine',100);
+
+insert into products values(2,'Lipstick',101);
+
+insert into products values(3,'Potato',103);
+
+select * from products;
+
+

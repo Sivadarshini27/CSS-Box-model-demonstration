@@ -1,0 +1,79 @@
+show databases;
+
+create database employee;
+
+use employee;
+
+CREATE TABLE LIST(
+
+id int NOT NULL,
+
+firstname varchar(40),
+
+lastname varchar(40),
+
+age int
+
+);
+
+Select * from LIST;
+
+
+Alter table LIST
+
+Modify firstname varchar(40) NOT NULL;
+
+
+
+Alter table LIST
+
+Modify lastname varchar(40) NOT NULL;
+
+
+
+Alter table LIST
+
+ADD UNIQUE(id);
+
+
+
+Select * from LIST;
+
+
+
+Alter table LIST
+
+ADD primary key(id);
+
+
+
+desc LIST;
+
+
+
+Alter table LIST
+
+ADD Check(age>=18);
+
+
+
+Insert into LIST values(1,'darshini','A.S',18);
+
+Insert into LIST values(2,'siva','S',25);
+
+Insert into LIST values(3,'yazhini','K',22);
+
+Insert into LIST values(4,'trisha','M',21);
+
+Insert into LIST values(5,'nithika','S',5);
+
+
+
+
+
+
+
+
+
+
+
