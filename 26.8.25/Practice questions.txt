@@ -1,0 +1,58 @@
+1. Workers not in HR or Admin with salary between 70000 and 300000
+
+SELECT * 
+FROM workers 
+WHERE department NOT IN ('HR', 'Admin') 
+AND salary BETWEEN 70000 AND 300000;
+
+
+
+2. Workers with first name starting with 'V' and salary >= 200000
+
+SELECT * 
+FROM workers 
+WHERE first_name LIKE 'V%' 
+AND salary >= 200000;
+
+
+
+3. Workers not in Admin with salary < 100000
+
+SELECT * 
+FROM workers 
+WHERE department NOT IN 'Admin' 
+AND salary < 100000;
+
+
+
+4. Average salary in the Admin department
+
+SELECT AVG(salary) AS avg_salary 
+FROM workers 
+WHERE department = 'Admin';
+
+
+
+5. Total salary for HR and Admin departments combined
+
+SELECT SUM(salary) AS total_salary 
+FROM workers 
+WHERE department IN ('HR','Admin');
+
+
+
+
+
+
+6. Count of employees whose first name starts with 'V'
+SELECT COUNT(*) AS count_employee 
+FROM workers 
+WHERE first_name LIKE 'V%';
+
+
+
+7. Total salary of employees with salary between 50000 and 200000
+
+SELECT SUM(salary) AS total_salary 
+FROM workers 
+WHERE salary BETWEEN 50000 AND 200000;
