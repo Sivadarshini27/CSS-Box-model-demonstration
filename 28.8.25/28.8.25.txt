@@ -1,0 +1,91 @@
+show databases;
+
+drop database DELL;
+
+create DATABASE DELL;
+
+USE DELL;
+
+
+CREATE TABLE workers(
+
+eno INT PRIMARY KEY,
+    
+ename VARCHAR(50),
+  
+job VARCHAR(30),
+    
+salary INT,
+    
+department VARCHAR(30)
+
+);
+
+
+INSERT INTO workers VALUES
+
+(10, 'Vijay', 'Manager',120000, 'Admin'),
+
+(20, 'surya', 'Clerk',80000, 'Finance'),
+
+(30, 'ajith', 'Engineer',95000, 'Admin'),
+
+(40, 'Trisha', 'Analyst',40000, 'Finance'),
+
+(50, 'sridivya', 'Clerk',60000, 'HR'),
+
+(60,'swetha','Anakyst',50000,'HR');
+
+
+
+SELECT * FROM workers;
+
+
+
+select * from workers where department='Finance' order by salary desc;
+
+select * from workers where department ='Admin' order by salary asc;
+
+select * from workers where department='HR' order by salary desc;
+
+
+select * from workers order by salary asc;
+
+select * from workers order by salary desc;
+
+
+select department,max(salary) from workers group by department;
+
+select job,min(salary) from workers group by job;
+
+select job,max(salary) from workers group by job;
+
+
+
+SELECT job, COUNT(*) AS num_workers FROM workers
+group by job
+order by num_workers ASC;
+
+
+
+SELECT eno, LTRIM(ename) AS left_trimmed_name FROM workers;
+
+select RTRIM(eno) from workers;
+
+select upper(job) from workers;
+
+select lower(job) from workers;
+
+select  department, MAX(salary) AS max_salary from workers group by department having MAX(salary) > 80000;
+
+
+
+
+SELECT job, salary
+FROM workers w1
+WHERE salary = (
+SELECT MAX(salary)
+ FROM workers w2
+ WHERE w1.job = w2.job
+);
+
