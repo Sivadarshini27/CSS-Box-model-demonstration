@@ -1,0 +1,101 @@
+show databases;
+
+create database class;
+
+use class;
+
+create table list(
+
+cid int,
+
+cname varchar(30),
+
+dept varchar(20)
+
+);
+
+
+insert into list values
+
+(101,'CT','CSC'),
+
+(102,'ADC','ece'),
+
+(103,'AIC','IT'),
+
+(105,'MATHS','CSC'),
+
+(106,'Robotics','ece');
+
+
+select * from list;
+
+
+create table student(
+
+sid int,
+
+sname varchar(20)
+
+);
+
+
+insert into student values
+
+(1,'sri'),
+
+(2,'divya'),
+
+(3,'krish');
+
+
+select * from student;
+
+
+select * from list cross join student;
+
+
+
+create table enrollment(
+ 
+sid int,
+  
+cid int
+
+);
+
+
+insert into enrollment values
+
+(1,101),
+
+(2,105),
+
+(3,106);
+
+
+
+select * from enrollment;
+
+
+
+select student.sid, student.sname, list.cid, list.cname, list.dept
+
+from student 
+inner join enrollment on student.sid = enrollment.sid
+inner 
+join list on enrollment.cid = list.cid;
+
+
+
+select *from list left outer join student on (cid='sid.cid');
+
+select *from list right outer join student on (cid='sid.cid');
+
+
+
+select * 
+from enrollment
+natural join student;
+
+
