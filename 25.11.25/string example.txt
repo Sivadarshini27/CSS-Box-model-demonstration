@@ -1,0 +1,150 @@
+package nov25;
+public class StringExamples {
+
+    public static void main(String[] args) {
+
+        // ---------------------- toUpperCase() and toLowerCase() ----------------------
+        System.out.println("toUpperCase() and toLowerCase():");
+
+        String s = "SivaDarshini";
+        System.out.println(s.toUpperCase());   
+        System.out.println(s.toLowerCase());   
+        System.out.println(s);                
+
+        System.out.println();
+
+
+        // ---------------------- trim() method ----------------------
+        System.out.println("trim():");
+
+        String sTrim = " Karthick ";
+        System.out.println(sTrim);            
+        System.out.println(sTrim.trim());     
+
+        System.out.println();
+
+
+        // ---------------------- startsWith(), endsWith() ----------------------
+        System.out.println("startsWith(), endsWith():");
+
+        String sStart = "Siva";
+        System.out.println(sStart.startsWith("Si"));  // true
+        System.out.println(sStart.endsWith("a"));     // true
+
+        System.out.println();
+
+
+        // ---------------------- charAt() ----------------------
+        System.out.println("charAt():");
+
+        String sChar = "Sachin";
+        System.out.println(sChar.charAt(0));   // S
+        System.out.println(sChar.charAt(3));   // h
+
+        System.out.println();
+
+
+        // ---------------------- length() ----------------------
+        System.out.println("length():");
+
+        String sLen = "Valarmathisivaganesh";
+        System.out.println(sLen.length());   // 6
+
+        System.out.println();
+
+
+        // ---------------------- intern() ----------------------
+        System.out.println("intern():");
+
+        String sIntern = new String("Sachin");
+        String sIntern2 = sIntern.intern();
+        System.out.println(sIntern2);        // Sachin
+
+        System.out.println();
+
+
+        // ---------------------- valueOf() ----------------------
+        System.out.println("valueOf():");
+
+        int a = 10;
+        String sValue = String.valueOf(a);
+        System.out.println(sValue + 10);     // 1010
+
+        System.out.println();
+
+
+        // ---------------------- replace() ----------------------
+        System.out.println("replace():");
+
+        String s1 = "Java is a programming language. Java is a platform. Java is an Island.";
+        String replaced = s1.replace("Java", "Lava");
+        System.out.println(replaced);
+
+        System.out.println();
+
+
+        // ---------------------- Concatenation using + ----------------------
+        System.out.println("String concatenation using +:");
+
+        String concat1 = "Abdul" + " Kalam";
+        System.out.println(concat1);
+
+        System.out.println();
+
+
+        // ---------------------- concat() method ----------------------
+        System.out.println("concat():");
+
+        String s2 = "Sachin ";
+        String s3 = "Tendulkar";
+        String concat2 = s2.concat(s3);
+        System.out.println(concat2);
+
+        System.out.println();
+
+
+        // ---------------------- equals() & equalsIgnoreCase() ----------------------
+        System.out.println("equals() and equalsIgnoreCase():");
+
+        String e1 = "Sachin";
+        String e2 = "Sachin";
+        String e3 = new String("Sachin");
+        String e4 = "Saurav";
+
+        System.out.println(e1.equals(e2));        // true
+        System.out.println(e1.equals(e3));        // true
+        System.out.println(e1.equals(e4));        // false
+
+        System.out.println();
+
+
+        // ---------------------- == operator ----------------------
+        System.out.println("== operator:");
+
+        String eq1 = "Nisha";
+        String eq2 = "Nisha";
+        String eq3 = new String("Nisha");
+
+        System.out.println(eq1 == eq2);   // true (same string pool object)
+        System.out.println(eq1 == eq3);   // false (new object)
+
+        System.out.println();
+
+
+        // ---------------------- compareTo() ----------------------
+        System.out.println("compareTo():");
+
+        String c1 = "Sachin";
+        String c2 = "Sachin";
+        String c3 = "Ratan";
+
+        System.out.println(c1.compareTo(c2));  // 0
+        System.out.println(c1.compareTo(c3));  // 1
+        System.out.println(c3.compareTo(c1));  // -1
+
+        System.out.println();
+    }
+}
+
+
+

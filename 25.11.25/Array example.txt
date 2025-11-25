@@ -1,0 +1,99 @@
+package nov25;
+import java.util.*;
+
+//Apache Commons Lang (if you use these features)
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
+
+public class ArrayExample {
+
+ public static void main(String[] args) {
+
+     // -------------------- 1. Print an array --------------------
+     System.out.println("1. Print an array");
+
+     int[] intArray = { 1, 2, 3, 4, 5 };
+
+     // prints reference
+     System.out.println(intArray);
+
+     // prints actual values
+     String intArrayString = Arrays.toString(intArray);
+     System.out.println(intArrayString);
+     System.out.println();
+
+
+     // -------------------- 3. Check if array contains a value --------------------
+     System.out.println("3. Check if array contains a certain value");
+
+     String[] stringArray = { "abc", "bcd", "cba", "dcb", "efg" };
+
+     boolean b = Arrays.asList(stringArray).contains("abc");
+     System.out.println(b);   // true
+     System.out.println();
+
+
+     // -------------------- 4. Concatenate two arrays --------------------
+     System.out.println("4. Concatenate two arrays");
+
+     int[] intArray2 = { 6, 7, 8, 9, 10 };
+
+     int[] mergedArray = ArrayUtils.addAll(intArray, intArray2);
+
+     System.out.println(Arrays.toString(mergedArray));
+     System.out.println();
+
+
+     // -------------------- 6. Join array elements --------------------
+     System.out.println("6. Join elements of array");
+
+     String joined = StringUtils.join(new String[] { "a", "b", "c" }, ", ");
+     System.out.println(joined);
+     System.out.println();
+
+
+     // -------------------- 7. Convert ArrayList to array --------------------
+     System.out.println("7. Convert ArrayList to array");
+
+     String[] strArray = { "a", "b", "c", "d", "e" };
+     ArrayList<String> arrayList = new ArrayList<>(Arrays.asList(strArray));
+
+     String[] convertedArray = new String[arrayList.size()];
+     arrayList.toArray(convertedArray);
+
+     for (String s : convertedArray) {
+         System.out.println(s);
+     }
+     System.out.println();
+
+
+     // -------------------- 8. Convert array to set --------------------
+     System.out.println("8. Convert array to set");
+
+     String[] s1 = { "a", "b", "c", "d", "e", "a" };
+
+     Set<String> set123 = new HashSet<>(Arrays.asList(s1));
+     System.out.println(set123); 
+     System.out.println();
+
+
+     // -------------------- 9. Reverse an array --------------------
+     System.out.println("9. Reverse an array");
+
+     int[] reverseArray = { 1, 2, 3, 4, 5 };
+     ArrayUtils.reverse(reverseArray);
+
+     System.out.println(Arrays.toString(reverseArray)); 
+     System.out.println();
+
+
+     // -------------------- 10. Remove element of an array --------------------
+     System.out.println("10. Remove element of an array");
+
+     int[] removeArray = { 1, 2, 3, 4, 5 };
+     int[] removed = ArrayUtils.removeElement(removeArray, 3);
+
+     System.out.println(Arrays.toString(removed));
+     System.out.println();
+ }
+}
