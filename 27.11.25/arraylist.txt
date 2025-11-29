@@ -1,0 +1,29 @@
+package nov27;
+import java.util.ArrayList;
+
+public class ArrayListTypes {
+
+    public static void main(String[] args) {
+
+        ArrayList<String> names = new ArrayList<>();
+        names.add("Kiran");
+        System.out.println("String ArrayList: " + names);
+
+        ArrayList<Integer> ages = new ArrayList<>();
+        ages.add(27);
+        System.out.println("Integer ArrayList: " + ages);
+
+        ArrayList<Double> prices = new ArrayList<>();
+        prices.add(99.99);
+        System.out.println("Double ArrayList: " + prices);
+
+
+        ArrayList<Object> mixed = new ArrayList<>();
+        mixed.add("Hello");
+        mixed.add(123);
+        mixed.add(45.67);
+        mixed.add(true);
+
+        System.out.println("Mixed ArrayList: " + mixed);
+    }
+}
